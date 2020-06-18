@@ -2,12 +2,13 @@ from django.shortcuts import render
 from django.views.generic import *
 from django.urls import reverse_lazy
 from .models import Message
+from django.contrib.auth.mixins import LoginRequiredMixin
 # Create your views here.
 # 留言列表
 class MessageList(ListView):
     model = Message
 
-class MessageDetail(DetailView):
+class MessageDetail(LoginRequiredMixin ,DetailView):
         model = Message
 
 

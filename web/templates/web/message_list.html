@@ -7,6 +7,9 @@
     <li>
         {{ msg.publication_date }}
         <a href='{% url 'msg_view' msg_id %}'>{{ msg.subject}}</a>
+        {% if user.is_authentication %}
+         <a href='{% url 'msg_delete' msg.id %}'>刪除</a>
+        {% endif %}
     <li>
     {% endfor%}
 </u>
