@@ -7,12 +7,12 @@
   <h1>留言板</h1>
   <div>
     <a href="/">首頁</a>
-    <a href="{% url 'msg_create'%}">新增留言</a>
+    <a href="{% url 'msg_create' %}">新增留言</a>
     {% if not user.is_authentication %}
        <a href='{% url 'login' %}'>登入</a>
     {% else %}
         <a href='{% url 'logout' %}'>登出</a>
-    {% elseif %}
+    {% endif %}
     
   </div>
   <div>

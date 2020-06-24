@@ -1,4 +1,4 @@
-{ % extend "base.html"%}
+{% extends "base.html" %}
 
 {% block content %}
 <form action="" method="post">
@@ -6,6 +6,6 @@
     <table>
     {{ form.as_p}}
     </table>
-    <input type="submit" value="送出"
+    <input type="submit" value="送出">
 </form>
 {% endblock %}

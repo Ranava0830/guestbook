@@ -8,16 +8,16 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 class MessageList(ListView):
     model = Message
 
-class MessageDetail(LoginRequiredMixin ,DetailView):
-        model = Message
+class MessageDetail(DetailView):
+    model = Message
 
 
 class MessageCreate(CreateView):
      model = Message
-     field = ['user','subject','content']
+     fields = ['user','subject','content']
      success_url = reverse_lazy('msg_list')
      
-class MessageDelete(DeleteView):
+class MessageDelete(LoginRequiredMixin, DeleteView):
     model = Message
     success_url = reverse_lazy('msg_delete')
 
